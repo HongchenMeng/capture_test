@@ -4,24 +4,34 @@ using System.Text;
 
 namespace SpyTool
 {
+    /// <summary>
+    /// 窗口信息
+    /// </summary>
     public class WindowInfo
     {
-        private IntPtr _Hwnd;
 
+        private IntPtr _Hwnd;
+        /// <summary>
+        /// 窗口句柄
+        /// </summary>
         public IntPtr Hwnd {
             get { return _Hwnd; }
             set { _Hwnd = value; }
         }
 
         private string _WindowText;
-
+        /// <summary>
+        /// 窗口标题
+        /// </summary>
         public string WindowText {
             get { return _WindowText; }
             set { _WindowText = value; }
         }
 
         private string _ClassName;
-
+        /// <summary>
+        /// 窗口类型名
+        /// </summary>
         public string ClassName {
             get { return _ClassName; }
             set { _ClassName = value; }
@@ -47,7 +57,10 @@ namespace SpyTool
             get { return _Process; }
             set { _Process = value; }
         }
-
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="hWnd">窗口句柄</param>
         public WindowInfo(IntPtr hWnd) {
             this._Hwnd = hWnd;
         }

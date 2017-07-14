@@ -8,16 +8,58 @@ namespace SpyTool
 {
     public class Win32
     {
+        /// <summary>
+        /// 通过窗口句柄获取窗口标题
+        /// </summary>
+        /// <param name="hWnd">窗口句柄</param>
+        /// <param name="byBuffer"></param>
+        /// <param name="nMaxCount"></param>
+        /// <returns></returns>
         [DllImport("user32.dll")]
         public static extern int GetWindowText(IntPtr hWnd, byte[] byBuffer, int nMaxCount);
+
+        /// <summary>
+        /// 通过窗口句柄获取窗口类型
+        /// </summary>
+        /// <param name="hWnd"></param>
+        /// <param name="byBuffer"></param>
+        /// <param name="nMaxCount"></param>
+        /// <returns></returns>
         [DllImport("user32.dll")]
         public static extern int GetClassName(IntPtr hWnd, byte[] byBuffer, int nMaxCount);
+
+        /// <summary>
+        /// 该函数返回桌面窗口的句柄。桌面窗口覆盖整个屏幕。
+        /// </summary>
+        /// <returns></returns>
         [DllImport("user32.dll")]
         public static extern IntPtr GetDesktopWindow();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hWndParent">父窗口句柄</param>
+        /// <param name="hChildAfter">子窗口句柄</param>
+        /// <param name="lpszClass"></param>
+        /// <param name="lpszWindowText"></param>
+        /// <returns></returns>
         [DllImport("user32.dll")]
         public static extern IntPtr FindWindowEx(IntPtr hWndParent, IntPtr hChildAfter, string lpszClass, string lpszWindowText);
+
+        /// <summary>
+        /// 窗口坐标
+        /// </summary>
+        /// <param name="pt"></param>
+        /// <returns></returns>
         [DllImport("user32.dll")]
         public static extern IntPtr WindowFromPoint(POINT pt);
+        
+        /// <summary>
+        /// 通过窗口句柄获取窗口信息
+        /// </summary>
+        /// <param name="hWnd"></param>
+        /// <param name="lpWindowInfo"></param>
+        /// <returns></returns>
         [DllImport("user32.dll")]
         public static extern bool GetWindowInfo(IntPtr hWnd, ref WINDOWINFO lpWindowInfo);
         [DllImport("user32.dll")]
@@ -52,11 +94,18 @@ namespace SpyTool
         public const int SM_CXVIRTUALSCREEN = 78;
         public const int SM_CYVIRTUALSCREEN = 79;
 
+        /// <summary>
+        /// 坐标结构，X,Y
+        /// </summary>
         public struct POINT {
             public int X;
             public int Y;
         }
 
+        /// <summary>
+        /// 矩形结构，左，上，右，底
+        /// 初始化矩形
+        /// </summary>
         public struct RECT
         {
             public int Left;
@@ -67,7 +116,10 @@ namespace SpyTool
                 return new System.Drawing.Rectangle(Left, Top, Right - Left, Bottom - Top);
             }
         }
-
+        /// <summary>
+        /// 窗口信息结构：
+        /// 
+        /// </summary>
         public struct WINDOWINFO
         {
             public uint cbSize;
