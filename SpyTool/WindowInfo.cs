@@ -38,21 +38,27 @@ namespace SpyTool
         }
 
         private Win32.WINDOWINFO _WndInfo;
-
+        /// <summary>
+        /// 窗口信息
+        /// </summary>
         public Win32.WINDOWINFO WndInfo {
             get { return _WndInfo; }
             set { _WndInfo = value; }
         }
 
         private mshtml.IHTMLDocument2 _Document;
-
+        /// <summary>
+        /// Hmtl 文档
+        /// </summary>
         public mshtml.IHTMLDocument2 Document {
             get { return _Document; }
             set { _Document = value; }
         }
 
         private System.Diagnostics.Process _Process;
-
+        /// <summary>
+        /// 访问本地或远程进程；并能启动或停止本地系统进程
+        /// </summary>
         public System.Diagnostics.Process Process {
             get { return _Process; }
             set { _Process = value; }
