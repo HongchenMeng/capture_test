@@ -64,7 +64,7 @@
             // btn_ok
             // 
             this.btn_ok.BackColor = System.Drawing.Color.Transparent;
-            this.btn_ok.ForeColor = System.Drawing.Color.White;
+            this.btn_ok.ForeColor = System.Drawing.Color.Green;
             this.btn_ok.Image = global::DevCapture.Properties.Resources.btn_ok;
             this.btn_ok.IsCheckButton = false;
             this.btn_ok.IsRadioButton = false;
@@ -78,7 +78,7 @@
             // btn_close
             // 
             this.btn_close.BackColor = System.Drawing.Color.Transparent;
-            this.btn_close.ForeColor = System.Drawing.Color.White;
+            this.btn_close.ForeColor = System.Drawing.Color.Red;
             this.btn_close.Image = global::DevCapture.Properties.Resources.btn_close;
             this.btn_close.IsCheckButton = false;
             this.btn_close.IsRadioButton = false;
